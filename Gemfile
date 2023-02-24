@@ -2,19 +2,34 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.1"
+group :production do
+  #gem 'pg' # for Heroku deployment
+  gem 'pg', '~> 1.1'
+end
 
-gem 'irb',  '1.3.7'
-gem 'reline', '0.2.7'
-
-gem 'bcrypt',  '3.1.18'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem "sprockets-rails"
+#gem "sprockets-rails"
 
 # Use sqlite3 as the database for Active Record
 # gem "sqlite3", "~> 1.4"
+
+
+gem 'jquery-rails'
+gem 'turbolinks'
+gem "sprockets-rails", :require => 'sprockets/railtie'
+
+
+#gem "therubyracer" 
+#gem 'uglifier', '~> 2.6.1'
+#gem 'uglifier', '~> 2.7'
+gem 'uglifier', '~> 4.2'
+
+group :development, :test do
+  gem 'sqlite3'
+end
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -55,7 +70,6 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
-  gem 'sqlite3'
 end
 
 group :development do
@@ -68,10 +82,6 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
-group :production do
-  #gem 'pg', '~> 0.11'
-  gem 'pg' # for Heroku deployment
-end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
@@ -79,6 +89,4 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-
 gem "terser", "~> 1.1"
-gem 'pg'
