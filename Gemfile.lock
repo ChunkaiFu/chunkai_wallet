@@ -128,7 +128,7 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.14.2-x86_64-linux)
       racc (~> 1.4)
-    pg (1.4.5)
+    pg (0.21.0)
     public_suffix (5.0.1)
     puma (5.6.5)
       nio4r (~> 2.0)
@@ -218,7 +218,7 @@ DEPENDENCIES
   importmap-rails
   irb (= 1.3.7)
   jbuilder
-  pg
+  pg (~> 0.11)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.2)
   reline (= 0.2.7)
