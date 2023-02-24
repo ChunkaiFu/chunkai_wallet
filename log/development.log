@@ -1467,3 +1467,45 @@ Processing by SessionsController#home as HTML
 Completed 200 OK in 147ms (Views: 141.7ms | ActiveRecord: 0.0ms | Allocations: 45053)
 
 
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/" for 165.91.13.101 at 2023-02-24 20:25:02 +0000
+Cannot render console from 165.91.13.101! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 14.3ms | Allocations: 1219)
+  Rendered layout layouts/application.html.erb (Duration: 1043.6ms | Allocations: 90928)
+Completed 200 OK in 1085ms (Views: 1069.3ms | ActiveRecord: 0.0ms | Allocations: 95519)
+
+
+Started POST "/login" for 165.91.13.101 at 2023-02-24 20:25:26 +0000
+Cannot render console from 165.91.13.101! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "Username"=>"calvinJoyy", "Password"=>"[FILTERED]", "commit"=>"LOG IN"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."Username" = ? LIMIT ?[0m  [["Username", "calvinJoyy"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Redirected to http://18.216.106.29:8080/login
+Completed 302 Found in 33ms (ActiveRecord: 0.5ms | Allocations: 4482)
+
+
+Started GET "/login" for 165.91.13.101 at 2023-02-24 20:25:27 +0000
+Cannot render console from 165.91.13.101! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 7.6ms | Allocations: 2274)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 2362)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 2671)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `signup_path' for #<ActionView::Base:0x0000000000b568>):
+    1: # <h1>Sessions#new</h1>
+    2: # <p>Find me in app/views/sessions/new.html.erb</p>
+    3: # <p>New user? <%= link_to "Register", signup_path %></p>
+    4: # <% provide(:title, "Log in") %>
+    5: # <h1>Log in </h1>
+    6: 
+  
+app/views/sessions/new.html.erb:3
