@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   get    'Register'  => 'users#new'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
+  #post '/signup', to: 'users#create'
   resources :users
 end
