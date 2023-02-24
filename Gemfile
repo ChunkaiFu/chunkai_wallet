@@ -69,8 +69,8 @@ group :development do
   # gem "spring"
 end
 group :production do
-  gem 'pg', '~> 0.11'
-  #gem 'pg' # for Heroku deployment
+  #gem 'pg', '~> 0.11'
+  gem 'pg' # for Heroku deployment
 end
 
 group :test do
@@ -79,3 +79,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "terser", "~> 1.1"
