@@ -81,3 +81,4 @@ group :test do
 end
 
 gem "terser", "~> 1.1"
+gem 'pg'
